@@ -1,0 +1,14 @@
+name: sa-ping
+on: workflow_dispatch
+permissions:
+  issues: write
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment as github-actions[bot]
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: gh api "repos/$REPO/issues/1/comments" -f body='@cdh5mcv6ty-hue 你好，请做一次自检：在仓库根目录新建 HELLO.md，内容为 hello from super-agent，然后开一个 PR。'
