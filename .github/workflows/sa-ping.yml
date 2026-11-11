@@ -11,4 +11,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-        run: gh api "repos/$REPO/issues/1/comments" -f body='@cdh5mcv6ty-hue 你好，请做一次自检：在仓库根目录新建 HELLO.md，内容为 hello from super-agent，然后开一个 PR。'
+        run: gh api "repos/$REPO/issues/1/comments" -f body='@cdh5mcv6ty-hue 请修复 README.md 里的拼写错误：第一行的 "hellow" 应改为 "hello"。'
